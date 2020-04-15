@@ -4,6 +4,7 @@ import Card from '../components/Cards/Cards'
 import Chart from '../components/Chart/Chart'
 import CountryPicker from '../components/CountryPicker/CountryPicker'
 import { fetchData } from '../api'
+import Head from 'next/head'
 
 class index extends Component {
   state = {
@@ -28,10 +29,14 @@ class index extends Component {
     const { data, country } = this.state;
     return (
       <div className="container">
+        <Head>
+          <title>COVID-19 Tracker</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+        <img className="image" src='/static/covid.png' alt="COVID-19" />
         <Card data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange}/>
-        <Chart data={data} country={country}/>
-        
+        <Chart data={data} country={country}/>  
       </div>
     )
   }
