@@ -22,8 +22,9 @@ class index extends Component {
     return (
       <div className="container">
         <Card data={data} />
-        <Chart />
         <CountryPicker />
+        <Chart />
+        
       </div>
     )
   }
